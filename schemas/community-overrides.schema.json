@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Arkpedia/arkpedia-color-palette/blob/main/schemas/community-overrides.schema.json",
+  "title": "Arkpedia community color palette overrides",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "overrides"],
+  "properties": {
+    "version": { "const": 1 },
+    "overrides": {
+      "type": "object",
+      "propertyNames": { "pattern": "^/(one|two|three|four|five|six)-star-skins/.+ - (Base|Elite 2)\\.webp$" },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["colors", "reason"],
+        "properties": {
+          "colors": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 5,
+            "items": { "type": "string", "pattern": "^#[0-9a-f]{6}$" }
+          },
+          "reason": { "type": "string", "minLength": 3 },
+          "source": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}
