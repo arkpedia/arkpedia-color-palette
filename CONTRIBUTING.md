@@ -1,10 +1,10 @@
 # Correct a palette
 
-1. Find the artwork path in `palettes/generated-palettes.json`.
+1. Find the artwork path in Arkpedia's palette catalogue, [`source/data/color-palettes.json` in arkpedia-data](https://github.com/arkpedia/arkpedia-data/blob/main/source/data/color-palettes.json).
 2. Add that exact path to `palettes/community-overrides.json`.
 3. Supply five lowercase hex colors in this order: hair, primary outfit, secondary outfit, outfit detail, standout feature.
 4. Add a short reason. A screenshot or source URL is optional but useful.
-5. Run `python3 scripts/validate.py` and open a pull request.
+5. Run `python3 scripts/validate.py` (it reads the catalogue from arkpedia-data) and open a pull request.
 
 Example:
 
